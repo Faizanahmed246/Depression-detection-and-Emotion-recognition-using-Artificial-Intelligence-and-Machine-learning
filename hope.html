@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope & Healing - Mental Health Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .crisis-btn {
+            background: #ff6b6b;
+            color: white !important;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: #4ecdc4;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #f0f0f0, #ffffff);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-section {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-align: center;
+        }
+
+        .emergency-section h2 {
+            color: white;
+        }
+
+        .emergency-contacts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .emergency-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-item {
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-item:hover {
+            transform: scale(1.02);
+        }
+
+        .mood-tracker {
+            background: linear-gradient(145deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .mood-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .mood-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mood-btn:hover,
+        .mood-btn.active {
+            background: white;
+            color: #4ecdc4;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(78, 205, 196, 0.4);
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid #4ecdc4;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 18px;
+            word-wrap: break-word;
+        }
+
+        .message.user .message-bubble {
+            background: #667eea;
+            color: white;
+        }
+
+        .message.bot .message-bubble {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+        }
+
+        .bot-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.5rem;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            margin-right: 0.5rem;
+            outline: none;
+        }
+
+        .chatbot-input input:focus {
+            border-color: #4ecdc4;
+        }
+
+        .chatbot-send {
+            padding: 0.75rem 1rem;
+            background: #4ecdc4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .chatbot-send:hover {
+            background: #44a08d;
+        }
+
+        .quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .quick-action {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 0.5rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-action:hover {
+            background: #4ecdc4;
+            color: white;
+            border-color: #4ecdc4;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 0.5rem 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        .typing-dots {
+            display: inline-block;
+            animation: typing 1.5s infinite;
+        }
+
+        @keyframes typing {
+            0%, 20% { opacity: 0; }
+            40% { opacity: 1; }
+            60%, 100% { opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+                bottom: 80px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Hope & Healing</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Get Help</a></li>
+                <li><a href="#emergency" class="crisis-btn">Crisis Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>You Are Not Alone</h1>
+                <p>We're here to provide support, resources, and hope for your mental health journey. Every step forward matters, and we believe in your strength to overcome challenges.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Support Now</a>
+                    <a href="#resources" class="btn btn-secondary">Browse Resources</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>How We Can Help</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-icon">💬</div>
+                        <h3>24/7 Chat Support</h3>
+                        <p>Connect with trained counselors and peer supporters who understand what you're going through. Available anytime, day or night.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>Self-Help Resources</h3>
+                        <p>Access articles, guides, and tools to help you understand and manage depression. Learn coping strategies and wellness techniques.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Community Support</h3>
+                        <p>Join supportive communities where you can share experiences and find encouragement from others on similar journeys.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🏥</div>
+                        <h3>Professional Referrals</h3>
+                        <p>Get connected with qualified mental health professionals in your area who can provide ongoing care and treatment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="mood-tracker">
+                    <h3 style="text-align: center; margin-bottom: 1rem;">Daily Mood Check-in</h3>
+                    <p style="text-align: center;">How are you feeling today? Tracking your mood can help identify patterns.</p>
+                    <div class="mood-buttons">
+                        <button class="mood-btn" onclick="selectMood(this, 'great')">😊 Great</button>
+                        <button class="mood-btn" onclick="selectMood(this, 'good')">🙂 Good</button>
+                        <button class="mood-btn" onclick="selectMood(this, 'okay')">😐 Okay</button>
+                        <button class="mood-btn" onclick="selectMood(this, 'low')">😔 Low</button>
+                        <button class="mood-btn" onclick="selectMood(this, 'struggling')">😞 Struggling</button>
+                    </div>
+                    <div id="mood-response" style="text-align: center; margin-top: 1rem;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="emergency" class="section emergency-section">
+            <div class="container">
+                <h2>Crisis Support - Immediate Help</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">If you're having thoughts of self-harm or suicide, please reach out immediately. You matter, and help is available.</p>
+                
+                <div class="emergency-contacts">
+                    <div class="emergency-card">
+                        <h3>Crisis Hotline</h3>
+                        <p><strong>988</strong></p>
+                        <p>Suicide & Crisis Lifeline<br>Available 24/7</p>
+                    </div>
+                    <div class="emergency-card">
+                        <h3>Crisis Text Line</h3>
+                        <p><strong>Text HOME to 741741</strong></p>
+                        <p>24/7 crisis support via text</p>
+                    </div>
+                    <div class="emergency-card">
+                        <h3>Emergency Services</h3>
+                        <p><strong>911</strong></p>
+                        <p>For immediate emergency assistance</p>
+                    </div>
+                    <div class="emergency-card">
+                        <h3>Crisis Chat</h3>
+                        <p><strong>suicidepreventionlifeline.org</strong></p>
+                        <p>Online chat support available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="section">
+            <div class="container">
+                <h2>Mental Health Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-item">
+                        <h3>Understanding Depression</h3>
+                        <p>Learn about symptoms, causes, and treatment options for depression.</p>
+                        <button onclick="openModal('depression-info')" class="btn btn-secondary" style="margin-top: 1rem;">Learn More</button>
+                    </div>
+                    <div class="resource-item">
+                        <h3>Coping Strategies</h3>
+                        <p>Practical techniques for managing difficult emotions and situations.</p>
+                        <button onclick="openModal('coping-strategies')" class="btn btn-secondary" style="margin-top: 1rem;">View Strategies</button>
+                    </div>
+                    <div class="resource-item">
+                        <h3>Wellness Activities</h3>
+                        <p>Daily practices to support your mental health and well-being.</p>
+                        <button onclick="openModal('wellness-activities')" class="btn btn-secondary" style="margin-top: 1rem;">Get Started</button>
+                    </div>
+                    <div class="resource-item">
+                        <h3>Support Networks</h3>
+                        <p>Find local and online support groups and communities.</p>
+                        <button onclick="openModal('support-networks')" class="btn btn-secondary" style="margin-top: 1rem;">Find Support</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Get Connected with Help</h2>
+                <div class="contact-form">
+                    <form id="support-form">
+                        <div class="form-group">
+                            <label for="name">Name (optional)</label>
+                            <input type="text" id="name" name="name" placeholder="You can remain anonymous">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (optional)</label>
+                            <input type="email" id="email" name="email" placeholder="For follow-up support">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="For phone support">
+                        </div>
+                        <div class="form-group">
+                            <label for="support-type">Type of Support Needed</label>
+                            <select id="support-type" name="support-type" required>
+                                <option value="">Select an option</option>
+                                <option value="immediate">Immediate crisis support</option>
+                                <option value="counseling">Professional counseling referral</option>
+                                <option value="peer">Peer support connection</option>
+                                <option value="resources">Information and resources</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How can we help you today?</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Share what's on your mind. We're here to listen and support you." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferred-contact">Preferred Contact Method</label>
+                            <select id="preferred-contact" name="preferred-contact">
+                                <option value="email">Email</option>
+                                <option value="phone">Phone call</option>
+                                <option value="text">Text message</option>
+                                <option value="chat">Online chat</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request for Support</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="depression-info" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Understanding Depression</h2>
+            <p>Depression is a common but serious mental health condition that affects how you feel, think, and handle daily activities. It's more than just feeling sad or going through a rough patch.</p>
+            <h3>Common Symptoms:</h3>
+            <ul>
+                <li>Persistent sadness or empty mood</li>
+                <li>Loss of interest in activities</li>
+                <li>Changes in appetite or weight</li>
+                <li>Sleep problems</li>
+                <li>Fatigue or low energy</li>
+                <li>Difficulty concentrating</li>
+            </ul>
+            <p><strong>Remember:</strong> Depression is treatable, and recovery is possible with the right support and treatment.</p>
+        </div>
+    </div>
+
+    <div id="coping-strategies" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Coping Strategies</h2>
+            <h3>Daily Techniques:</h3>
+            <ul>
+                <li><strong>Deep Breathing:</strong> Take slow, deep breaths when feeling overwhelmed</li>
+                <li><strong>Grounding:</strong> Name 5 things you can see, 4 you can touch, 3 you can hear</li>
+                <li><strong>Physical Activity:</strong> Even a short walk can improve mood</li>
+                <li><strong>Journaling:</strong> Write down your thoughts and feelings</li>
+                <li><strong>Reach Out:</strong> Connect with supportive friends or family</li>
+                <li><strong>Routine:</strong> Maintain a daily schedule for stability</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="wellness-activities" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Wellness Activities</h2>
+            <h3>Daily Practices:</h3>
+            <ul>
+                <li>Morning meditation or mindfulness (5-10 minutes)</li>
+                <li>Gratitude journaling (3 things you're grateful for)</li>
+                <li>Physical exercise or movement</li>
+                <li>Creative activities (drawing, music, writing)</li>
+                <li>Nature time (even looking out a window)</li>
+                <li>Connecting with others</li>
+                <li>Limiting social media and news consumption</li>
+                <li>Establishing a bedtime routine</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="support-networks" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Support Networks</h2>
+            <h3>Types of Support:</h3>
+            <ul>
+                <li><strong>Online Communities:</strong> Depression forums and support groups</li>
+                <li><strong>Local Support Groups:</strong> In-person meetings in your area</li>
+                <li><strong>Peer Support:</strong> Connect with others who understand</li>
+                <li><strong>Professional Support:</strong> Therapists, counselors, psychiatrists</li>
+                <li><strong>Crisis Support:</strong> 24/7 hotlines and chat services</li>
+                <li><strong>Family & Friends:</strong> Building your personal support network</li>
+            </ul>
+            <p>Remember: It's okay to need help, and seeking support is a sign of strength.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hope & Healing. This is a supportive resource designed to help. For immediate crisis support, please call 988 or your local emergency services.</p>
+            <p>If you're in immediate danger, please call 911 or go to your nearest emergency room.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chatbot-toggle">💬</button>
+        
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <h3>🤖 Hope Assistant</h3>
+                <button class="chatbot-close" id="chatbot-close">×</button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="message-bubble">
+                        Hi there! I'm Hope, your AI support assistant. I'm here to listen, provide resources, and help you navigate your mental health journey. How are you feeling today?
+                        <div class="quick-actions">
+                            <div class="quick-action" onclick="sendQuickMessage('I\'m feeling overwhelmed')">Feeling overwhelmed</div>
+                            <div class="quick-action" onclick="sendQuickMessage('I need someone to talk to')">Need to talk</div>
+                            <div class="quick-action" onclick="sendQuickMessage('I want coping strategies')">Coping strategies</div>
+                            <div class="quick-action" onclick="sendQuickMessage('Emergency help')">Emergency help</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="typing-indicator" id="typing-indicator">
+                <div class="bot-avatar">🤖</div>
+                Hope is typing<span class="typing-dots">...</span>
+            </div>
+            
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." maxlength="500">
+                <button class="chatbot-send" id="chatbot-send">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mood tracker functionality
+        function selectMood(button, mood) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.mood-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show appropriate response
+            const responseDiv = document.getElementById('mood-response');
+            let message = '';
+            
+            switch(mood) {
+                case 'great':
+                    message = "That's wonderful! Keep up the positive momentum.";
+                    break;
+                case 'good':
+                    message = "Great to hear you're doing well today!";
+                    break;
+                case 'okay':
+                    message = "Okay days are valid too. Take care of yourself.";
+                    break;
+                case 'low':
+                    message = "We're here for you. Consider reaching out for support.";
+                    break;
+                case 'struggling':
+                    message = "Your feelings are valid. Please consider talking to someone today.";
+                    break;
+            }
+            
+            responseDiv.innerHTML = `<p style="margin-top: 1rem; font-weight: bold;">${message}</p>`;
+            
+            // Store mood (in real app, this would go to a database)
+            localStorage.setItem('dailyMood', JSON.stringify({
+                mood: mood,
+                date: new Date().toDateString()
+            }));
+        }
+
+        // Form submission
+        document.getElementById('support-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const supportType = formData.get('support-type');
+            
+            // Show appropriate response based on support type
+            if (supportType === 'immediate') {
+                alert('Thank you for reaching out. Given the immediate nature of your request, please also consider calling 988 (Crisis Lifeline) or 911 if you\'re in immediate danger. We will contact you as soon as possible.');
+            } else {
+                alert('Thank you for reaching out. We\'ve received your request and will connect you with appropriate support within 24 hours. If you need immediate help, please call 988.');
+            }
+            
+            // In a real application, this would send data to a server
+            console.log('Support request submitted:', Object.fromEntries(formData));
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Close modal when clicking the X or outside the modal
+        document.querySelectorAll('.modal').forEach(modal => {
+            const closeBtn = modal.querySelector('.close');
+            
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Check for saved mood on page load
+        window.addEventListener('load', function() {
+            const savedMood = localStorage.getItem('dailyMood');
+            if (savedMood) {
+                const moodData = JSON.parse(savedMood);
+                const today = new Date().toDateString();
+                
+                if (moodData.date === today) {
+                    // Highlight the previously selected mood
+                    const moodButtons = document.querySelectorAll('.mood-btn');
+                    moodButtons.forEach(btn => {
+                        if (btn.textContent.toLowerCase().includes(moodData.mood)) {
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+            }
+        });
+
+        // Chatbot functionality
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotWindow = document.getElementById('chatbot-window');
+        const chatbotClose = document.getElementById('chatbot-close');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const chatbotSend = document.getElementById('chatbot-send');
+        const typingIndicator = document.getElementById('typing-indicator');
+
+        // Toggle chatbot
+        chatbotToggle.addEventListener('click', function() {
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        chatbotClose.addEventListener('click', function() {
+            chatbotWindow.style.display = 'none';
+        });
+
+        // Send message
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+
+            // Add user message
+            addMessage('user', message);
+            chatbotInput.value = '';
+
+            // Show typing indicator
+            showTyping();
+
+            // Simulate AI response after delay
+            setTimeout(() => {
+                const response = generateAIResponse(message);
+                hideTyping();
+                addMessage('bot', response);
+            }, 1000 + Math.random() * 2000); // Random delay 1-3 seconds
+        }
+
+        chatbotSend.addEventListener('click', sendMessage);
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function addMessage(sender, text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            if (sender === 'bot') {
+                messageDiv.innerHTML = `
+                    <div class="bot-avatar">🤖</div>
+                    <div class="message-bubble">${text}</div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="message-bubble">${text}</div>
+                `;
+            }
+            
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            typingIndicator.style.display = 'flex';
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            typingIndicator.style.display = 'none';
+        }
+
+        function sendQuickMessage(message) {
+            addMessage('user', message);
+            showTyping();
+            
+            setTimeout(() => {
+                const response = generateAIResponse(message);
+                hideTyping();
+                addMessage('bot', response);
+            }, 1500);
+        }
+
+        // AI Response Generator
+        function generateAIResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            // Crisis detection
+            if (lowerMessage.includes('suicide') || lowerMessage.includes('kill myself') || 
+                lowerMessage.includes('end my life') || lowerMessage.includes('don\'t want to live') ||
+                lowerMessage.includes('emergency help')) {
+                return `I'm very concerned about you and want to help immediately. Please reach out to crisis support right now:
+                
+                🚨 **Crisis Lifeline: 988**
+                📱 **Crisis Text: Text HOME to 741741**
+                🆘 **Emergency: 911**
+                
+                You matter, and there are people who want to help you through this. Can you please call one of these numbers now? I'm here to support you, but professional crisis counselors can provide the immediate help you need.`;
+            }
+            
+            // Feeling overwhelmed
+            if (lowerMessage.includes('overwhelmed') || lowerMessage.includes('stressed') || 
+                lowerMessage.includes('anxious') || lowerMessage.includes('panic')) {
+                return `I hear that you're feeling overwhelmed, and that's completely understandable. Let's try a quick grounding technique:
+                
+                🌸 **5-4-3-2-1 Technique:**
+                - Name 5 things you can see
+                - 4 things you can touch
+                - 3 things you can hear
+                - 2 things you can smell
+                - 1 thing you can taste
+                
+                Take slow, deep breaths. You're safe right now. Would you like more coping strategies, or do you want to talk about what's making you feel this way?`;
+            }
+            
+            // Depression symptoms
+            if (lowerMessage.includes('depressed') || lowerMessage.includes('sad') || 
+                lowerMessage.includes('hopeless') || lowerMessage.includes('empty')) {
+                return `Thank you for sharing how you're feeling. Depression can make everything feel heavy and difficult. Your feelings are valid, and you're not alone in this.
+                
+                💙 **Remember:**
+                - Depression is treatable
+                - You deserve support and care
+                - Small steps count as progress
+                
+                Some things that might help right now:
+                - Reach out to a trusted friend or family member
+                - Try a gentle walk or some light movement
+                - Practice self-compassion
+                
+                Would you like to talk more about what you're experiencing, or would you prefer some specific coping strategies?`;
+            }
+            
+            // Need to talk
+            if (lowerMessage.includes('talk') || lowerMessage.includes('listen') || 
+                lowerMessage.includes('alone') || lowerMessage.includes('lonely')) {
+                return `I'm here to listen, and I'm glad you reached out. Sometimes just having someone to talk to can make a real difference.
+                
+                💬 **Ways to connect:**
+                - I'm here for you right now
+                - Crisis Text Line: Text HOME to 741741
+                - National Suicide Prevention Lifeline: 988
+                - Online support communities
+                
+                What's on your mind? I'm here to listen without judgment. You can share as much or as little as you're comfortable with.`;
+            }
+            
+            // Coping strategies
+            if (lowerMessage.includes('coping') || lowerMessage.includes('strategies') || 
+                lowerMessage.includes('help') || lowerMessage.includes('what can i do')) {
+                return `Here are some evidence-based coping strategies that many people find helpful:
+                
+                🧘 **Immediate Relief:**
+                - Deep breathing (4 counts in, 6 counts out)
+                - Progressive muscle relaxation
+                - Mindfulness or meditation
+                
+                🌱 **Daily Practices:**
+                - Regular sleep schedule
+                - Gentle exercise or walking
+                - Journaling your thoughts
+                - Connecting with supportive people
+                
+                🎯 **Professional Support:**
+                - Therapy (CBT, DBT, etc.)
+                - Support groups
+                - Medication if recommended
+                
+                Which of these resonates with you? I can provide more details on any strategy that interests you.`;
+            }
+            
+            // Positive responses
+            if (lowerMessage.includes('better') || lowerMessage.includes('good') || 
+                lowerMessage.includes('okay') || lowerMessage.includes('fine')) {
+                return `I'm glad to hear you're doing better! It's wonderful that you're taking care of yourself. 
+                
+                ✨ **Keep up the good work with:**
+                - Maintaining healthy routines
+                - Staying connected with support systems
+                - Practicing self-care
+                
+                Remember, it's normal to have ups and downs. I'm here if you need support on the more challenging days too. Is there anything specific that's been helping you feel better?`;
+            }
+            
+            // Sleep issues
+            if (lowerMessage.includes('sleep') || lowerMessage.includes('tired') || 
+                lowerMessage.includes('insomnia') || lowerMessage.includes('can\'t sleep')) {
+                return `Sleep difficulties are very common with depression and anxiety. Here are some gentle suggestions:
+                
+                🌙 **Sleep Hygiene Tips:**
+                - Keep a consistent bedtime routine
+                - Limit screens 1 hour before bed
+                - Create a calm, cool sleeping environment
+                - Try relaxation techniques before bed
+                
+                💭 **If your mind is racing:**
+                - Write down worries in a journal
+                - Practice guided meditation
+                - Try progressive muscle relaxation
+                
+                If sleep problems persist, consider talking to a healthcare provider. Poor sleep can significantly impact mental health. How long have you been having trouble sleeping?`;
+            }
+            
+            // Generic supportive responses
+            const supportiveResponses = [
+                `Thank you for sharing with me. Your feelings are completely valid, and reaching out shows real strength. What's the most important thing you'd like support with right now?`,
+                
+                `I'm here to listen and support you. Mental health challenges can feel isolating, but you're not alone. Would you like to tell me more about what you're experiencing?`,
+                
+                `It takes courage to reach out, and I'm glad you're here. Everyone's mental health journey is unique. What would be most helpful for you right now - resources, coping strategies, or just someone to listen?`,
+                
+                `Your wellbeing matters, and I want to help in whatever way I can. Sometimes talking through things can provide clarity and relief. What's been on your mind lately?`
+            ];
+            
+            return supportiveResponses[Math.floor(Math.random() * supportiveResponses.length)];
+        }
+
+        // Add some interactive elements
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
