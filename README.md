@@ -1,0 +1,2 @@
+# Depression-detection-and-Emotion-recognition-using-Artificial-Intelligence-and-Machine-learning
+An AI-powered system that detects emotions and identifies potential signs of depression using Machine Learning and Deep Learning techniques. Features facial expression analysis, emotion classification, data preprocessing, predictive modeling, and performance evaluation to support early mental health assessment.
